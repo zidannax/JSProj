@@ -1,0 +1,8 @@
+node_modules
+lib
+dist
+coverage
+test/lib/**
+test/endtoend/*/create
+examples/svelte-example/public/create/
+bundle-legacy.js
