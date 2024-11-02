@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@JSProj/core/dist/style.css';
+@import '@JSProj/dashboard/dist/style.css';
+@import '@JSProj/drag-drop/dist/style.css';
+@import '@JSProj/progress-bar/dist/style.css';
