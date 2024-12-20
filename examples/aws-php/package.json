@@ -1,0 +1,19 @@
+{
+  "name": "@JSProj-example/aws-php",
+  "version": "0.0.0",
+  "dependencies": {
+    "@JSProj/aws-s3": "workspace:*",
+    "@JSProj/core": "workspace:*",
+    "@JSProj/dashboard": "workspace:*",
+    "JSProj": "workspace:*"
+  },
+  "devDependencies": {
+    "escreate": "^0.17.1"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "php -S localhost:8080 serve.php",
+    "outputBundle": "escreate --format=esm --sourcemap=inline --bundle ./main.js"
+  }
+}
