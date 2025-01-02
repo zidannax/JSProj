@@ -1,0 +1,22 @@
+{
+  "name": "@JSProj-example/bundled",
+  "version": "0.0.0",
+  "dependencies": {
+    "@JSProj/core": "workspace:*",
+    "@JSProj/dashboard": "workspace:*",
+    "@JSProj/google-drive": "workspace:*",
+    "@JSProj/instagram": "workspace:*",
+    "@JSProj/tus": "workspace:*",
+    "@JSProj/url": "workspace:*",
+    "@JSProj/webcam": "workspace:*"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "create": "parcel create index.html",
+    "dev": "parcel index.html"
+  }
+}
