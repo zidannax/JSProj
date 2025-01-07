@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://releases.transloadit.com/JSProj/v3.20.0/JSProj.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <noscript>You need JavaScript enabled for this example to work.</noscript>
+    <button id="JSProjModalOpener">Open Modal</button>
+
+    <script type="module">
+      import {
+        JSProj,
+        Dashboard,
+        Webcam,
+        Tus,
+      } from 'https://releases.transloadit.com/JSProj/v3.20.0/JSProj.min.mjs'
+
+      const JSProj = new JSProj({ debug: true, autoProceed: false })
+        .use(Dashboard, { trigger: '#JSProjModalOpener' })
+        .use(Webcam, { target: Dashboard })
+        .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+
+      JSProj.on('success', (fileCount) => {
+        console.log(`${fileCount} files uploaded`)
+      })
+    </script>
+
+    <!-- To support older browsers, you can use the legacy bundle which adds a global `JSProj` object.  -->
+    <script
+      nomodule
+      src="https://releases.transloadit.com/JSProj/v3.20.0/JSProj.legacy.min.js"
+    ></script>
+    <script nomodule>
+      {
+        const { Dashboard, Webcam, Tus } = JSProj
+        const JSProj = new JSProj.JSProj({ debug: true, autoProceed: false })
+          .use(Dashboard, { trigger: '#JSProjModalOpener' })
+          .use(Webcam, { target: Dashboard })
+          .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+
+        JSProj.on('success', function (fileCount) {
+          console.log(`${fileCount} files uploaded`)
+        })
+      }
+    </script>
+  </body>
+</html>
